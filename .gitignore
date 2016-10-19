@@ -7,3 +7,15 @@ bin
 *~
 .DS_Store
 target/
+
+# Ignore bundler config.
+tutorial-rails/.bundle
+
+# Ignore the bundles!
+tutorial-rails/vendor/bundle
+
+# Ignore all logfiles and tempfiles.
+tutorial-rails/log/*
+!tutorial-rails/log/.keep
+tutorial-rails/tmp
+tutorial-rails/.byebug_history

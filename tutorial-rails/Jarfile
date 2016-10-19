@@ -1,0 +1,1 @@
+local 'lib/db-client-3.0.0.10-SNAPSHOT.jar'

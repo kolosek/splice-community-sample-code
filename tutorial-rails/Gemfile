@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use jdbcsqlite3 as the database for Active Record
-gem 'activerecord-jdbcsqlite3-adapter'
+gem 'activerecord-jdbcsqlite3-adapter', platform: :jruby
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -22,10 +22,13 @@ gem 'therubyrhino'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks-source', github: 'turbolinks/turbolinks-source-gem'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'lock_jar'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -41,7 +44,7 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 gem 'activerecord-jdbcderby-adapter'
-gem 'activerecord-jdbc-adapter'
+# gem 'activerecord-jdbc-adapter'
 gem 'jbundler', '>= 0.9.3'
 gem 'jar-dependencies', '>= 0.3.5'
 group :development, :test do
@@ -56,3 +59,5 @@ end
   #gem 'spring'
   #gem 'spring-watcher-listen', '~2.0.0'
 #end
+
+# gem 'activerecord-jdbc-adapter', platform: :jruby

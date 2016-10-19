@@ -8,24 +8,24 @@ It is very important that the versions of the below outline products should have
 * Ruby version
   2.3.1
 
-* Jruby Version 
+* Jruby Version
   9.1.5.0
+
+  $ rvm use jruby-9.1.5.0 --install
 
 * Rails Version
   4.0.0 ( Note Rails 5 is incompatible with the jdbcderby adapter)
 
 * System dependencies
-  The client jar file needs to be placed in the classpath mentioned below:
-  The db-client-2.x.x.x.jar needs to be placed in the lib folder of the jruby
-  In my case it was at /Users/amitmudgal/.rbenv/versions/jruby-9.1.5.0/lib
-  Remember to install the jdbcderby-adapter using the command "gem install activerecord-jdbcderby-adapter"
-     
+  Just run the app. The jar file is located in /lib directory
+  If making some changes to the core db-client, copy and overwrite new modified file:
+  ~/spliceengine/db-client/target/db-client-3.0.0.10-SNAPSHOT.jar to the /lib directory
 
 * Configuration
   Make sure splicemachine is up and running:
 
 * Database creation
-  We use the default SPLICE database for this implementation. 
+  We use the default SPLICE database for this implementation.
 
 * Database initialization
   Do run the "bundle install" after cloning the git repo locally. It would install all the local gems required.
@@ -40,11 +40,15 @@ It is very important that the versions of the below outline products should have
     pool: 1000
 
   Modify the same based on your environment.
- 
+
 * How to run the test suite
   To run via rake you can use the below commands:
+
   rails generate model Company name:string
+
   bin/rake db:migrate RAILS_ENV=development
+
+  rake test test/
 
 * Services (job queues, cache servers, search engines, etc.)
 
@@ -52,7 +56,7 @@ It is very important that the versions of the below outline products should have
 
   Make sure you have all gems added from gemlist.txt. A thing to note here is that the version of the activerecord should be the same.
   Please refer to document : http://doc.splicemachine.com/Developers/Connecting/JDBCConnectWithJRuby.html for further steps.
-  
+
 Implementation of Rails on CentOS (centos-release-6-8.el6.centos.12.3.x86_64)
 
 * sudo yum groupinstall -y 'development tools'
@@ -69,4 +73,4 @@ Implementation of Rails on CentOS (centos-release-6-8.el6.centos.12.3.x86_64)
   whatever directory comes substitute bin for lib and put the client driver file there.
   In my case i for ~/.rvm/rubies/jruby-9.0.5.0/bin/jruby
   ~/.rvm/rubies/jruby-9.0.5.0/lib
-   
+
